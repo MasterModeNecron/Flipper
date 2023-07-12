@@ -1,53 +1,19 @@
--------------------------------------------
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+## Getting Started
 
-Note also that the patches are built against "unrenamed" MCP source code (aka
-srgnames) - this means that you will not be able to read them directly against
-normal code.
+#### Installing Forge
 
-Source pack installation information:
+1. Run normal Minecraft 1.8.9 and once it reaches the title screen wait about 5 seconds and close it.
+2. Install Minecraft **1.8.9** forge from the [forge website](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.12.2.html)
+   - Once you click on the installer you'd like to download, a window will pop up. **Do not click on anything in the middle of your screen**; instead, click on the `skip ad` button towards the top right
+3. Open the installer, select install client, and click install
+4. When forge is installed, open the Minecraft launcher, go under the `installations tab`, click `new installation`, select the version release `1.8.9-forge1.8.9-11.15.1.xxxx` (it will usually be all the way towards the bottom).
+5. Once you are done, run this new installation that you just created. Once it reaches the title screen, wait about 5 seconds and close it.
 
-Standalone source installation
-==============================
+#### Installing the Flipper Mod
 
-See the Forge Documentation online for more detailed instructions:
-http://mcforge.readthedocs.io/en/latest/gettingstarted/
-
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
-
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: "gradlew genEclipseRuns" (./gradlew genEclipseRuns if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run "gradlew eclipse" to generate the project.
-(Current Issue)
-4. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment
-5. Edit MOD_CLASSES to show [modid]%%[Path]; 2 times rather then the generated 4.
-
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: "gradlew genIntellijRuns" (./gradlew genIntellijRuns if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can run "gradlew --refresh-dependencies" to refresh the local cache. "gradlew clean" to reset everything {this does not affect your code} and then start the processs again.
-
-Should it still not work, 
-Refer to #ForgeGradle on EsperNet for more information about the gradle environment.
-or the Forge Project Discord discord.gg/UvedJ9m
-
-Forge source installation
-=========================
-MinecraftForge ships with this code and installs it as part of the forge
-installation process, no further action is required on your part.
-
-LexManos' Install Video
-=======================
-https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
-
-For more details update more often refer to the Forge Forums:
-http://www.minecraftforge.net/forum/index.php/topic,14048.0.html
+1. Download the latest version of the mod
+2. Locating your mods folder
+    2.1 If on Windows
+        2.1.1 Hold the Windows button and press R. Type %appdata% into the window that pops up and click the Ok Button.
+        2.1.2 Find the .minecraft folder and enter it. Scroll down until you see the mods folder.
+        2.1.3 Put the new Flipper-[mcversion]-[modversion].jar file into your mods folder
