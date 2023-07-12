@@ -1,0 +1,4 @@
+TODO LIST
+
+Create List of all bazaar products and instant buy prices
+Edit tooltips to include craft costs of all item modifiers, including recoms, reforges, enchants that can be found on the bz
