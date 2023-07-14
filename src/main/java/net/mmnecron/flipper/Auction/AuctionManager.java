@@ -1,11 +1,15 @@
 package net.mmnecron.flipper.Auction;
 
 import com.google.gson.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.TextComponentString;
 import net.mmnecron.flipper.Flipper;
 import net.mmnecron.flipper.util.APIManager;
 import net.mmnecron.flipper.util.APIManager.*;
+import net.mmnecron.flipper.util.ChatColourUtil;
 import net.mmnecron.flipper.util.ResolveItemBytes;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -72,7 +76,7 @@ public class AuctionManager {
                             try {
                                 itemNBT = CompressedStreamTools.readCompressed(new ByteArrayInputStream(Base64.getDecoder().decode(itemBytes)));
                             } catch (Exception e) {
-                                Flipper.LOGGER.info(e.getClass());
+                                Flipper.LOGGER.info("Auction Manager Error : " + e.getClass().getName());
                             }
                             if (itemNBT == null) {
                                 continue;
@@ -94,12 +98,16 @@ public class AuctionManager {
                     }
                 }
             }
+            EntityPlayer player = Minecraft.getMinecraft().player;
+            if (player != null) {
+                player.sendMessage(new TextComponentString(ChatColourUtil.formatString("&r&6&l[Flipper] &r&2Updated BIN")));
+            }
         }
     }
 
     public static JsonObject getAH(int page) {
         Gson gson = new Gson();
-        Request request = APIManager.getAnonymousRequest("/auctions");
+        Request request = APIManager.getAnonymousRequest("/skyblock/auctions");
         request.addRequestArgument("page", String.valueOf(page));
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         HttpGet httpRequest = new HttpGet(request.buildURL());
